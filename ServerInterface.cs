@@ -36,17 +36,17 @@ namespace ServerInterface
         void SetEmployeePermissions(String Password, Int32 Employee, List<Permission> permissions);
         void ResetEmployeePermissions(String Password, Int32 Employee);
 
-		List<Company> GetCompanies(String Password);
+        List<Company> GetCompanies(String Password);
 
-		void NewCompany(String Password, String Name);
-		void DeleteCompany(String Password, Int32 Company);
-		void ChangeCompanyName(String Password, Int32 Company, String Name);
+        void NewCompany(String Password, String Name);
+        void DeleteCompany(String Password, Int32 Company);
+        void ChangeCompanyName(String Password, Int32 Company, String Name);
 
-		Company GetUnloggedUserCompany(String Password);
-		void SetUnloggedUserCompany(String Password, Int32 Company);
+        Company GetUnloggedUserCompany(String Password);
+        void SetUnloggedUserCompany(String Password, Int32 Company);
 
-		List<Company> GetEmployeeCompanies(String Password, Int32 Employee);
-		void SetEmployeeCompanies(String Password, Int32 Employee, List<Company> Companies);
+        List<Company> GetEmployeeCompanies(String Password, Int32 Employee);
+        void SetEmployeeCompanies(String Password, Int32 Employee, List<Company> Companies);
 
         List<AdminDatabaseFiles> GetDatabases(String Password);
         string GetChecksum(String Password, String FileName);
@@ -63,16 +63,16 @@ namespace ServerInterface
         void ExportTime(String Password, Int32 Year);
         void ClearTime(String Password, Int32 Year);
 
-		byte[] GetCompanyLogo(String Password, Int32 Company);
-		void SetCompanyLogo(String Password, Int32 Company, byte[] image);
-		void DeleteCompanyLogo(String Password, Int32 Company);
+        byte[] GetCompanyLogo(String Password, Int32 Company);
+        void SetCompanyLogo(String Password, Int32 Company, byte[] image);
+        void DeleteCompanyLogo(String Password, Int32 Company);
     }
 
     public interface IServerInterface 
     {
         String GetSession(String UserName, String ComputerName, String RealName);
-		Company GetCompany(String Session);
-		byte[] GetCompanyLogo(String Session);
+        Company GetCompany(String Session);
+        byte[] GetCompanyLogo(String Session);
 
         Boolean IsSessionValid(String hash);
         Boolean Ping(String Session);
@@ -87,7 +87,7 @@ namespace ServerInterface
 
         List<Event> GetEvents(String Session, Events.ReadFormat Format, object Argument, out Int32 MaxID, Events.ReadFilter Filter, out Boolean IsMin, out Boolean IsMax);
         String LastEventEmployee(String Session);
-		Int32 GetRows(String Session, Events.ReadFilter Filter);
+        Int32 GetRows(String Session, Events.ReadFilter Filter);
         Int16 GetLastTurn(String Session);
 
         void AddEvent(String Session, String Data, DateTime EventDate, Int32 Type, Int16 Turn);
@@ -102,7 +102,7 @@ namespace ServerInterface
         void UpdateSubEvent(String Session, SubEvent cm);
 
         List<Failure> GetFailures(String Session, Failures.ReadFormat format, Failures.Search Search, Events.Range range);
-		Int32 GetRowsFailures(String Session, Failures.ReadFormat format, Failures.Search Search);
+        Int32 GetRowsFailures(String Session, Failures.ReadFormat format, Failures.Search Search);
         Int32 GetRowsFailuresInProgress(String Session);
 
         void AddFailure(String Session, Failure failure);

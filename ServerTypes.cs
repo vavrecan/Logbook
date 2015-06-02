@@ -11,8 +11,8 @@ namespace ServerTypes
         public Int32 id;
         public string user;
         public bool active;
-		public Int32 type;
-		public List<Company> companies;
+        public Int32 type;
+        public List<Company> companies;
     }
 
     [Serializable]
@@ -49,7 +49,7 @@ namespace ServerTypes
         public string userName;
         public string pcName;
         public string ownerName;
-		public string company;
+        public string company;
     }
 
     [Serializable]
@@ -58,15 +58,15 @@ namespace ServerTypes
         public string userName;
         public Int32 cathegory;
         public bool canAccess;
-		public List<Company> companies;
+        public List<Company> companies;
     }
 
-	[Serializable]
-	public class Company
-	{
-		public Int32 id;
-		public string name;
-	}
+    [Serializable]
+    public class Company
+    {
+        public Int32 id;
+        public string name;
+    }
 
     [Serializable]
     public class Event
@@ -267,7 +267,7 @@ namespace ServerTypes
             WatchDog,
             Other,
             Administrator,
-			Dispatcher,
+            Dispatcher,
         }
 
         public static string[] EmployeesTranslated = 
@@ -277,7 +277,7 @@ namespace ServerTypes
             "Kontrola", 
             "Nezaradený",
             "Správca",
-			"Dispečer"
+            "Dispečer"
         };
     }
         
